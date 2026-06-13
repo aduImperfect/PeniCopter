@@ -17,3 +17,7 @@ func _process(_delta: float) -> void:
 		countDelayAccumulation = 0.0
 
 	text = str(scoreCount)
+
+func _score_reset() -> void:
+	countDelayAccumulation = 0.0
+	scoreCount = 0.0

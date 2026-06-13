@@ -10,9 +10,6 @@ const WALL_SCENE = preload("res://TSCN/wall.tscn")
 @export var spawnDelay : float = 0.0
 @export var spawnDelayAccumulation : float = 0.0
 
-#@export var removeSpawnDelay : float = 0.5
-#@export var removeSpawnDelayAccumulation : float = 0.0
-
 @export var wallPosX : float = 0
 @export var wallPosY : float = 40
 
@@ -25,6 +22,8 @@ const WALL_SCENE = preload("res://TSCN/wall.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	wallPosX = 0
+	wallPosY = 40
 	delayAccumulation = 0.0
 	spawnDelayAccumulation = 0.0
 
@@ -86,3 +85,16 @@ func _animate_walls() -> void:
 func _walls_move(_delta : float) -> void:
 	for wallChild in get_children():
 		wallChild.position.x -= moveSpeed * _delta
+
+func _walls_reset() -> void:
+	wallPosX = 0
+	wallPosY = 40
+	delayAccumulation = 0.0
+	spawnDelayAccumulation = 0.0
+
+	wallCount = 0
+
+	for k in get_children():
+		remove_child(k)
+
+	wallNodes.clear()

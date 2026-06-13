@@ -77,3 +77,15 @@ func _animate_walls() -> void:
 func _walls_move(_delta : float) -> void:
 	for wallFrontChild in get_children():
 		wallFrontChild.position.x -= moveFrontSpeed * _delta
+
+func _walls_front_reset() -> void:
+	wallFrontPosX = 1000
+	wallFrontPosY = 160
+	delayFrontAccumulation = 0.0
+	spawnFrontDelayAccumulation = 0.0
+
+	for k in get_children():
+		remove_child(k)
+
+	wallFrontNodes.clear()
+	wallFrontCount = 0

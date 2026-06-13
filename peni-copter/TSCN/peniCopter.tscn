@@ -42,5 +42,9 @@ metadata/_edit_use_anchors_ = true
 z_index = -1
 script = ExtResource("5_lb8yh")
 
-[node name="CollisionMgr" type="Node2D" parent="." unique_id=51429146]
+[node name="CollisionMgr" type="Node2D" parent="." unique_id=51429146 node_paths=PackedStringArray("wallCollectionNode", "wallFrontCollectionNode", "playerNode", "scoreNode")]
 script = ExtResource("7_178tm")
+wallCollectionNode = NodePath("../WallSpawner")
+wallFrontCollectionNode = NodePath("../WallFrontSpawner")
+playerNode = NodePath("../PeriChar")
+scoreNode = NodePath("../Camera2D/Score")

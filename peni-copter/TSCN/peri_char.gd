@@ -36,3 +36,8 @@ func _drop_char(_delta : float) -> void:
 func _input_char(_delta : float) -> void:
 	if Input.is_action_pressed("ui_up"):
 		position.y -= pushUpSpeed * _delta
+
+func _player_reset() -> void:
+	periDelayAccumulation = 0.0
+	position.x = startPosX
+	position.y = startPosY
