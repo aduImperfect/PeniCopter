@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://d2mvwo7ibvqqe"]
+
+[ext_resource type="Texture2D" uid="uid://dblbn8oownxst" path="res://Textures/WilliamSpriteSheet.png" id="1_cjw02"]
+
+[node name="Wall" type="Node2D" unique_id=1087675863]
+
+[node name="WilliamSpriteSheet" type="Sprite2D" parent="." unique_id=2063609744]
+modulate = Color(0.84947944, 0.4157731, 0.4157731, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_cjw02")
+hframes = 13

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://ciyry82ar5xhi"]
+
+[ext_resource type="Script" uid="uid://ccg1qe1frkkxi" path="res://TSCN/wall_spawner.gd" id="1_xxkko"]
+[ext_resource type="Texture2D" uid="uid://cjlk2kysvwl3d" path="res://Textures/peniChar.png" id="2_728kv"]
+[ext_resource type="Script" uid="uid://w2iprcu6n765" path="res://TSCN/peri_char.gd" id="3_hsan5"]
+[ext_resource type="Script" uid="uid://c47ejo2thqn72" path="res://TSCN/camera_2d.gd" id="4_hsan5"]
+[ext_resource type="Script" uid="uid://d17muho1vl30w" path="res://TSCN/wall_front_spawner.gd" id="5_lb8yh"]
+[ext_resource type="Script" uid="uid://bwn0u7bykhi1e" path="res://TSCN/score.gd" id="6_06268"]
+[ext_resource type="Script" uid="uid://s6xg76ytl8a3" path="res://TSCN/collision_mgr.gd" id="7_178tm"]
+
+[node name="Node2D" type="Node2D" unique_id=2052893622]
+
+[node name="WallSpawner" type="Node2D" parent="." unique_id=1915504545]
+z_index = -1
+script = ExtResource("1_xxkko")
+
+[node name="PeriChar" type="Sprite2D" parent="." unique_id=1305855318]
+z_index = -1
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_728kv")
+hframes = 8
+script = ExtResource("3_hsan5")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=515153898 node_paths=PackedStringArray("playerNode")]
+z_index = 1
+script = ExtResource("4_hsan5")
+playerNode = NodePath("../PeriChar")
+
+[node name="Score" type="TextEdit" parent="Camera2D" unique_id=979319914]
+custom_minimum_size = Vector2(50, 50)
+offset_left = 450.0
+offset_top = -300.0
+offset_right = 550.0
+offset_bottom = -200.0
+theme_override_colors/font_color = Color(0.95686275, 0.9647059, 0.05490196, 1)
+theme_override_font_sizes/font_size = 50
+text = "0"
+script = ExtResource("6_06268")
+metadata/_edit_use_anchors_ = true
+
+[node name="WallFrontSpawner" type="Node2D" parent="." unique_id=1811095046]
+z_index = -1
+script = ExtResource("5_lb8yh")
+
+[node name="CollisionMgr" type="Node2D" parent="." unique_id=51429146]
+script = ExtResource("7_178tm")
